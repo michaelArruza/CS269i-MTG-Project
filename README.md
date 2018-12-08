@@ -1,1 +1,2 @@
-# CS269i-MTG-Project
+# ianjones763-mtgStocks
+MTG stock simulator

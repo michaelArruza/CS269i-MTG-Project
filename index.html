@@ -1,0 +1,102 @@
+<html>
+<head>
+  <title>MTG</title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Nav bar at top -->
+  <div class="topnav">
+    <div class="padding-top"> </div>
+    <div id="logo">MTG <br> Simulator </div>
+    <div id="currdate">loading...</div>
+    <button class="button back" type="button" title="Simulate 1 week forward"> <span> Back </span> </button>
+    <button class="button forward" type="button" title="Simulate 1 week backward"> <span> Forward </span></button>
+    <input id= "search" type="search" placeholder="Search cards...">
+    <div class="padding-top"> </div>
+  </div>
+
+  <!-- Body div, includes card name and prices -->
+  <div class="bodyheader"> 
+    <div class="padding"> </div>
+    <div id="cardnameContainer"> 
+      <p id="cardname">loading...</p>
+    </div>
+
+    <div id="pricediv">
+      <!-- Market price -->
+      <div> 
+        <p class="priceheader"> MARKET </p>
+        <p class="price" id="marketpriceHeader"> loading... </p>
+      </div>
+      <!-- User's cash on hand -->
+      <div> 
+        <p class="priceheader"> CASH </p>
+        <p class="price" id="cashHeader"> loading... </p>
+      </div>
+      <!-- User's owned card value -->
+      <div> 
+        <p class="priceheader"> PORTFOLIO VALUE </p>
+        <p class="price" id="assetsHeader"> $0.00 </p>
+      </div>
+
+
+    </div>
+    <div class="padding"> </div>
+  </div>
+
+  <!-- Line to divide body div from vis area -->
+  <div style="width:60%; margin-left:20%; height:1px; background-color: black; opacity: 0.5"> </div>
+
+  <!-- Visualization area -->
+  <div id=visAndList style="display:flex">
+    <!-- Legend and buy/sell buttons -->
+    <div id="legendcontainer"> 
+      <!-- Legend -->
+      <div id="legend"> 
+        <p align="center" style="color:steelblue"> Record Over Time </p>
+        <span class="legendinfo"> 
+          <text> Max Price</text> 
+          <b id="maxprice"> loading... </b> 
+        </span>
+        <br>
+        <span class="legendinfo"> 
+          <text> Min Price</text> 
+          <b id="minprice"> loading... </b> 
+        </span>
+        <br>
+        <span class="legendinfo"> 
+          <text> Avg Price</text> 
+          <b id="avgprice"> loading... </b> 
+        </span>
+        <br>
+        <span class="legendinfo"> 
+          <text> Market Price</text> 
+          <b id="marketprice"> loading... </b> 
+        </span>
+      </div>
+      <!-- Buy/sell buttons -->
+      <div id="buysellContainer">
+        <button class="buysell buy" type="button" title="Buy this card"> <span> Buy</button>
+        <button class="buysell sell" type="button" title="Sell this card"> <span> Sell </span></button>
+      </div>
+    </div> 
+    <!-- Graph -->
+    <div id="vis"> </div>
+    <!-- Card list -->
+    <div id="cardListContainer"> 
+      <div style="text-align:center; color:steelblue; font-size:1.5em; margin-top: 15px"> Portfolio </div>
+      <div id="cardList"> </div>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+</div>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="js/vis.js"></script>
+</body>
+</html>
